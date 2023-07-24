@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/bootstrap.min.css" />
+    <script type="module" src="./script/index.js" defer></script>
+    <title>Visits to Doctor</title>
+  </head>
+  <body style="background-color: rgba(255, 166, 0, 0.47);">
+    <header class="header">
+      <section class="header__section container">
+        <a href="#" class="header__section-bcg">
+          <img
+            class="logo"
+            src="img/hospital-clinic-plus-logo-7916383C7A-seeklogo.com.png"
+            alt="logo"
+          />
+        </a>
+        <h1 class="header__section-name display-1">Your Health, Our Priority!</h1>
+        <button
+          id="btn-login"
+          class="header__section-btn btn btn-outline-primary"
+        >
+          Login
+        </button>
+        <button
+          id="btn-visit"
+          style="display: none"
+          class="header__section-btn btn btn-outline-success"
+        >
+          Add Visit
+        </button>
+      </section>
+    </header>
+
+    <main class="body">
+      <section class="body__section container">
+        <h1 class="body__section-tittle">No items have been added</h1>
+      </section>
+    </main>
+
+    <form class="filter container">
+      <div class="row">
+        <div class="col" style="background-color: rgb(115, 115, 255)
+        ; padding: 20px;">
+          <label for="title-search" style="color: aliceblue; font-size: 20px;" class="form-label">Title</label>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="title-search"
+              aria-describedby="basic-addon3"
+              placeholder="by title"
+              name="title"
+            />
+          </div>
+        </div>
+
+        <div class="col" style="background-color: rgb(115, 115, 255)
+        ; padding: 20px">
+          <label for="status-search" style="color: aliceblue; font-size: 20px;" class="form-label">Status</label>
+          <select class="form-select" name="status" id="status-search">
+            <option selected value="">by status</option>
+          
+            <option value="open">Open</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+
+        <div class="col" style="background-color: rgb(115, 115, 255); padding: 20px">
+          <label for="priority-search" style="color: aliceblue; font-size: 20px;" class="form-label">Priority</label>
+          <select class="form-select" name="priority" id="priority-search">
+            <option selected value="">by priority</option>
+            <option value="high">High</option>
+            <option value="normal">Normal</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <section class="container text-start mt-4">
+      <div class="card-group d-flex flex-row flex-wrap gap-4">
+      </div>
+    </section>
+  </body>
+</html>

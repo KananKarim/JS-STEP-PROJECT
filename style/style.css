@@ -1,0 +1,52 @@
+body {
+  padding-bottom: 15px;
+}
+.visit {
+  border: 1px solid black;
+}
+.size {
+  min-width: 31%;
+  max-width: 32%;
+}
+.header__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: 15px 0 15px 0;
+  width: 100px;
+}
+.header__section-name {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  color:rgb(115, 115, 255);
+}
+.header__section-btn {
+  height: 50px;
+}
+
+.body__section {
+  margin: 100px auto;
+}
+.body__section-tittle {
+  color: rgb(135, 135, 135);
+  text-align: center;
+}
+.modal {
+  margin: 1rem 0 1rem;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.header__section {
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
