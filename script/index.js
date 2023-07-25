@@ -1,11 +1,11 @@
-import { Visit } from "./visit.js";
+import { Visitor } from "./visit.js";
 import { doctors } from "./visit.js";
 import {
-  getAllVisits,
-  getVisitById,
-  createNewVisit,
-  editVisitById,
-  deleteVisit,
+  getVisitors,
+  getVisitorsID,
+  addVisitor,
+  putVisitorsID,
+  deleteVisitor,
 } from "./requests.js";
 
 import filter from "./filter.js";
@@ -14,7 +14,7 @@ filter();
 
 import { Modal, Form } from "./modal.js";
 
-const h1 = document.querySelector(".body__section-tittle");
+const h1 = document.querySelector(".tittle");
 const loginBtn = document.querySelector("#btn-login");
 const btnVisit = document.querySelector("#btn-visit");
 
@@ -35,9 +35,9 @@ console.log(token);
 
 const cardGroup = document.querySelector(".card-group");
 
-getAllVisits(token).then((response) => {
+getVisitors(token).then((response) => {
   response.forEach((visitObject) => {
-    const visit = new Visit(visitObject);
+    const visit = new Visitor(visitObject);
     cardGroup.append(visit.render());
   });
 });
@@ -108,8 +108,8 @@ btnVisit.addEventListener("click", () => {
         visitLastVisitDate: visitLastVisitDate,
       };
 
-      createNewVisit(token, requestBody).then((response) => {
-        const visit = new Visit(response);
+      addVisitor(token, requestBody).then((response) => {
+        const visit = new Visitor(response);
         cardGroup.append(visit.render());
       });
       loginModal.close();
@@ -121,7 +121,7 @@ cardGroup.addEventListener("click", (event) => {
     const visitCard = event.target.closest(".card");
     const visitID = visitCard.dataset.id;
     visitCard.classList.add("d-none");
-    deleteVisit(visitID, token).then((response) => console.log(response));
+    deleteVisitor(visitID, token).then((response) => console.log(response));
   }
 });
 
@@ -129,7 +129,7 @@ cardGroup.addEventListener("click", (event) => {
   if (event.target.getAttribute("id") === "btn-details") {
     const visitCard = event.target.closest(".card"); 
     const visitID = visitCard.dataset.id; 
-    getVisitById(visitID, token).then((response) => {
+    getVisitorsID(visitID, token).then((response) => {
       const visit = new doctors[response.doctor.toLowerCase()](response); 
       visit.renderDetails(); 
     });
@@ -140,7 +140,7 @@ cardGroup.addEventListener("click", (event) => {
   if (event.target.getAttribute("id") === "btn-less") {
     const visitCard = event.target.closest(".card"); 
     const visitID = visitCard.dataset.id; 
-    getVisitById(visitID, token).then((response) => {
+    getVisitorsID(visitID, token).then((response) => {
       const visit = new doctors[response.doctor.toLowerCase()](response); 
       visit.renderLess(); 
     });
@@ -172,7 +172,7 @@ cardGroup.addEventListener("click", (event) => {
     tempVisit.renderNewForm();
 
     
-    getVisitById(visitID, token).then((response) => {
+    getVisitorsID(visitID, token).then((response) => {
       const doctor = visitCard
         .querySelector(".card-header")
         .innerText.toLowerCase();
@@ -255,8 +255,8 @@ cardGroup.addEventListener("click", (event) => {
           visitLastVisitDate: visitLastVisitDate,
         };
 
-        editVisitById(visitID, token, requestBody).then((response) => {
-          const visit = new Visit(response);
+        putVisitorsID(visitID, token, requestBody).then((response) => {
+          const visit = new Visitor(response);
           const visitCard = document.querySelector(`#id-${visitID}`); 
           visitCard.querySelector(".card-body h5").innerText = response.title;
           visitCard.querySelector(".card-text").innerText =

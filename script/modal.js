@@ -1,6 +1,6 @@
-import { visitDoctors, visitPriorities, visitStatuses } from "./visit.js";
+import { visitdoctor, visitpriority, visitstatus } from "./visit.js";
 
-export function Input({ type, classes, id, name }) {
+export function Int({ type, classes, id, name }) {
   const input = document.createElement("input");
   input.classList.add(classes);
   input.id = id;
@@ -46,13 +46,13 @@ export function Form({ id, classes, action }) {
   this.action = action;
 
   this.renderAuthorization = function () {
-    const inputEmail = Input({
+    const inputEmail = Int({
       type: "email",
       classes: "form-control",
       id: "exampleInputEmail1",
       name: "E-mail",
     });
-    const inputPassword = Input({
+    const inputPassword = Int({
       type: "password",
       classes: "form-control",
       id: "exampleInputPassword1",
@@ -63,15 +63,17 @@ export function Form({ id, classes, action }) {
     tagForm.classList.add(this.classes);
     tagForm.setAttribute("id", this.id);
 
+  
     let tagButton = document.createElement("button");
     tagButton.classList.add(
       "btn",
-      "btn-outline-secondary",
+      "btn-outline-danger",
       "authorization-btn"
     );
     tagButton.setAttribute("id", "btn-submit");
     tagButton.setAttribute("type", "submit");
     tagButton.innerText = "Submit";
+    tagButton.style.marginTop="20px"
 
     tagForm.append(inputEmail.label);
     tagForm.append(inputEmail.input);
@@ -88,15 +90,15 @@ export function Form({ id, classes, action }) {
       classes: "form-control",
       id: "doctorList1",
       name: "Doctor",
-      options: visitDoctors,
+      options: visitdoctor,
     });
-    const inputTitle = Input({
+    const inputTitle = Int({
       type: "text",
       classes: "form-control",
       id: "visitTitle1",
       name: "Title",
     });
-    const inputDesc = Input({
+    const inputDesc = Int({
       type: "text",
       classes: "form-control",
       id: "visitDesc1",
@@ -106,15 +108,15 @@ export function Form({ id, classes, action }) {
       classes: "form-control",
       id: "visitStatus1",
       name: "Status",
-      options: visitStatuses,
+      options: visitstatus,
     });
     const inputPriority = Select({
       classes: "form-control",
       id: "visitPriority1",
       name: "Priority",
-      options: visitPriorities,
+      options: visitpriority,
     });
-    const inputPatient = Input({
+    const inputPatient = Int({
       type: "text",
       classes: "form-control",
       id: "visitPatient1",
@@ -130,6 +132,7 @@ export function Form({ id, classes, action }) {
     tagButton.setAttribute("id", "btn-submit-newVisit");
     tagButton.setAttribute("type", "submit");
     tagButton.innerText = "Submit";
+    
 
     tagForm.append(inputDoctor.label);
     tagForm.append(inputDoctor.select);

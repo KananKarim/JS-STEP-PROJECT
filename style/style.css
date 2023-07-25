@@ -8,7 +8,7 @@ body {
   min-width: 31%;
   max-width: 32%;
 }
-.header__section {
+.head {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,36 +17,39 @@ body {
   margin: 15px 0 15px 0;
   width: 100px;
 }
-.header__section-name {
+.name {
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
-  color:rgb(115, 115, 255);
+  color:rgb(53, 187, 120);
 }
-.header__section-btn {
+.form-control:hover{
+background-color:rgb(187, 255, 221);
+transition: 0.5s;
+}
+.btn {
   height: 50px;
 }
-
-.body__section {
+.main {
   margin: 100px auto;
 }
-.body__section-tittle {
-  color: rgb(135, 135, 135);
-  text-align: center;
+#btn-submit-newVisit{
+  background-color: red;
+  margin-top: 10px;
 }
+
 .modal {
   margin: 1rem 0 1rem;
 }
-
 .modal-backdrop {
   opacity: 0.5;
 }
-
 .overflow {
   overflow: hidden;
 }
-
-.header__section {
+.head {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }

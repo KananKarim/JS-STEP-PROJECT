@@ -1,7 +1,7 @@
 export default function () {
   const filter = document.querySelector(".filter");
 
-  const showFilteredCards = (title, status, priority) => {
+  const displayCards = (title, status, priority) => {
     const cards = document.querySelectorAll(".card-item");
 
     for (const card of cards) {
@@ -36,7 +36,7 @@ export default function () {
     const priorityElem = form.querySelector("#priority-search");
     const priority = priorityElem.value.toLowerCase();
 
-    showFilteredCards(title, status, priority);
+    displayCards(title, status, priority);
   });
 
   filter.addEventListener("submit", (e) => {

@@ -18,26 +18,26 @@ const sendRequest = async (entity = "", method = "GET", token, config) => {
       }
     } else {
       return new Error(
-        `Something went wrong with fetch request: entity - ${entity}, method - ${method}!`
+        `There is a problem fetching request: entity - ${entity}, method - ${method}!`
       );
     }
   });
 };
 
-export const createNewVisit = (token, requestBody) =>
+export const addVisitor = (token, requestBody) =>
   sendRequest("", "POST", token, {
     body: JSON.stringify(requestBody),
   });
 
-export const deleteVisit = (visitId, token) =>
+export const deleteVisitor = (visitId, token) =>
   sendRequest(visitId, "DELETE", token);
 
-export const editVisitById = (visitId, token, requestBody) =>
+export const putVisitorsID = (visitId, token, requestBody) =>
   sendRequest(visitId, "PUT", token, {
     body: JSON.stringify(requestBody),
   });
 
-export const getAllVisits = (token) => sendRequest("", "GET", token);
+export const getVisitors = (token) => sendRequest("", "GET", token);
 
-export const getVisitById = (visitId, token) =>
+export const getVisitorsID = (visitId, token) =>
   sendRequest(visitId, "GET", token);

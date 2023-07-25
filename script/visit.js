@@ -1,6 +1,6 @@
-import { Input } from "./modal.js";
+import { Int } from "./modal.js";
 
-export function Visit({
+export function Visitor({
   id: visitID,
   doctor: visitDoctor,
   title: visitTitle,
@@ -21,26 +21,26 @@ export function Visit({
     const visitCardWrapperElem = document.createElement("div");
 
     const visitCardHTML = `
-      <div class="card size border border-1 rounded-2 card-item" data-id="${this.visitID}" id="id-${this.visitID}">
+      <div class="card size border border-success border-3 rounded-2 card-item" data-id="${this.visitID}" id="id-${this.visitID}">
         <div class="card-header d-flex justify-content-between">
           ${this.visitDoctor}<button class="btn-close" type="button" aria-label="Close"></button>
         </div>
 
         <div class="card-body">
-          <h5>${this.visitTitle}</h5>
-          <p class="card-text">${this.visitDesc}</p>
+          <h5 class="text-primary">${this.visitTitle}</h5>
+          <p class="card-text text-info">${this.visitDesc}</p>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item card-patient"><strong>Patient</strong>: ${this.visitPatient}</li>
+            <li class="list-group-item text-success card-patient"><strong>Patient</strong>: ${this.visitPatient}</li>
             <li class="list-group-item card-status"><strong>Status</strong>: ${this.visitStatus}</li>
             <li class="list-group-item card-priority"><strong>Priority</strong>: ${this.visitPriority}</li>
           </ul>
         </div>
 
         <div class="card-footer">
-          <button class="btn btn-primary btn-sm" type="button" id="btn-details">Details</button
-          ><button class="btn btn-primary btn-sm d-none" type="button" id="btn-less">Less</button
-          ><button class="btn btn-secondary btn-sm ms-1" type="button" id="btn-edit">Edit</button>
+          <button class="btn btn-success btn-sm" type="button" id="btn-details">Details</button>
+          <button class="btn btn-success btn-sm d-none" type="button" id="btn-less">Less</button
+          ><button class="btn btn-info btn-sm ms-1" type="button" id="btn-edit">Edit</button>
         </div>
       </div>
     `;
@@ -64,7 +64,7 @@ export function Cardiologist({
   visitDisease,
   visitAge,
 }) {
-  Visit.call(this, {
+  Visitor.call(this, {
     id: visitID,
     doctor: visitDoctor,
     title: visitTitle,
@@ -126,25 +126,25 @@ export function Cardiologist({
       }
     } while (btnSubmit.previousSibling.id !== "visitPatient1");
 
-    const visitBlood = new Input({
+    const visitBlood = new Int({
       type: "text",
       classes: "form-control",
       id: "visitBlood1",
       name: "Blood Presure",
     });
-    const visitWeight = new Input({
+    const visitWeight = new Int({
       type: "text",
       classes: "form-control",
       id: "visitWeight1",
       name: "Weight Index",
     });
-    const visitDisease = new Input({
+    const visitDisease = new Int({
       type: "text",
       classes: "form-control",
       id: "visitDisease1",
       name: "Heart Disease",
     });
-    const visitAge = new Input({
+    const visitAge = new Int({
       type: "text",
       classes: "form-control",
       id: "visitAge1",
@@ -172,7 +172,7 @@ export function Dentist({
   visitPatient,
   visitLastVisitDate,
 }) {
-  Visit.call(this, {
+  Visitor.call(this, {
     id: visitID,
     doctor: visitDoctor,
     title: visitTitle,
@@ -225,7 +225,7 @@ export function Dentist({
       }
     } while (btnSubmit.previousSibling.id !== "visitPatient1");
 
-    const visitLastVisitDate = new Input({
+    const visitLastVisitDate = new Int({
       type: "text",
       classes: "form-control",
       id: "visitLastVisitDate1",
@@ -247,7 +247,7 @@ export function Therapist({
   visitPatient,
   visitAge,
 }) {
-  Visit.call(this, {
+  Visitor.call(this, {
     id: visitID,
     doctor: visitDoctor,
     title: visitTitle,
@@ -300,7 +300,7 @@ export function Therapist({
       }
     } while (btnSubmit.previousSibling.id !== "visitPatient1");
 
-    const visitAge = new Input({
+    const visitAge = new Int({
       type: "text",
       classes: "form-control",
       id: "visitAge1",
@@ -318,6 +318,6 @@ export const doctors = {
   therapist: Therapist,
 };
 
-export const visitDoctors = ["Dentist", "Cardiologist", "Therapist"];
-export const visitPriorities = ["High", "Normal", "Low"];
-export const visitStatuses = ["Open", "Done"];
+export const visitdoctor = ["Dentist", "Cardiologist", "Therapist"];
+export const visitpriority = ["High", "Normal", "Low"];
+export const visitstatus = ["Open", "Done"];
