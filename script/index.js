@@ -120,6 +120,7 @@ cardGroup.addEventListener("click", (event) => {
     const visitCard = event.target.closest(".card");
     const visitID = visitCard.dataset.id;
     visitCard.classList.add("d-none");
+    deleteVisitor(visitID, token)
   }
 });
 

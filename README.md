@@ -4,8 +4,8 @@
 - Kanan Karimli (student 2)
 - Sahib Humbatzada (student 3)
 ## What we did?
-Imanova Tunzala - using bootstrap, token storage, designing, editing of cards, creation of some subclasses.
-<br>Karimli Kanan - creation of  classes, generation of new cards, detailing of cards
+Imanova Tunzala - using bootstrap, token storage, designing, editing of cards, creation of some Constructor subclasses.
+<br>Karimli Kanan - creation of Constructor functions, generation of new cards, detailing of cards
 <br>Sahib Humbatzada- authoriztion, backend, modal windows, editing.
 
 ## Task
