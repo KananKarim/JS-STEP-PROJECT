@@ -31,7 +31,6 @@ const authorizeModal = new Modal({
 
 const token = await authorizeModal.getToken(loginBtn, h1, btnVisit);
 
-console.log(token);
 
 const cardGroup = document.querySelector(".card-group");
 
@@ -121,7 +120,6 @@ cardGroup.addEventListener("click", (event) => {
     const visitCard = event.target.closest(".card");
     const visitID = visitCard.dataset.id;
     visitCard.classList.add("d-none");
-    deleteVisitor(visitID, token).then((response) => console.log(response));
   }
 });
 

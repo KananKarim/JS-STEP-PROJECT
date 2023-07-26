@@ -151,14 +151,14 @@ export function Cardiologist({
       name: "Patient's Age",
     });
 
-    btnSubmit.before(visitBlood.render().label);
-    btnSubmit.before(visitBlood.render().input);
-    btnSubmit.before(visitWeight.render().label);
-    btnSubmit.before(visitWeight.render().input);
-    btnSubmit.before(visitDisease.render().label);
-    btnSubmit.before(visitDisease.render().input);
-    btnSubmit.before(visitAge.render().label);
-    btnSubmit.before(visitAge.render().input);
+    btnSubmit.before(visitBlood.label);
+    btnSubmit.before(visitBlood.input);
+    btnSubmit.before(visitWeight.label);
+    btnSubmit.before(visitWeight.input);
+    btnSubmit.before(visitDisease.label);
+    btnSubmit.before(visitDisease.input);
+    btnSubmit.before(visitAge.label);
+    btnSubmit.before(visitAge.input);
   };
 }
 
@@ -232,8 +232,8 @@ export function Dentist({
       name: "Last Visit Date",
     });
 
-    btnSubmit.before(visitLastVisitDate.render().label);
-    btnSubmit.before(visitLastVisitDate.render().input);
+    btnSubmit.before(visitLastVisitDate.label);
+    btnSubmit.before(visitLastVisitDate.input);
   };
 }
 
@@ -307,8 +307,8 @@ export function Therapist({
       name: "Patient's Age",
     });
 
-    btnSubmit.before(visitAge.render().label);
-    btnSubmit.before(visitAge.render().input);
+    btnSubmit.before(visitAge.label);
+    btnSubmit.before(visitAge.input);
   };
 }
 
