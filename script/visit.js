@@ -28,19 +28,19 @@ export function Visitor({
 
         <div class="card-body">
           <h5 class="text-primary">${this.visitTitle}</h5>
-          <p class="card-text text-info">${this.visitDesc}</p>
+          <p class="card-text text-secondary">${this.visitDesc}</p>
 
           <ul class="list-group list-group-flush">
             <li class="list-group-item text-success card-patient"><strong>Patient</strong>: ${this.visitPatient}</li>
-            <li class="list-group-item card-status"><strong>Status</strong>: ${this.visitStatus}</li>
-            <li class="list-group-item card-priority"><strong>Priority</strong>: ${this.visitPriority}</li>
+            <li class="list-group-item text-info card-status"><strong>Status</strong>: ${this.visitStatus}</li>
+            <li class="list-group-item text-danger card-priority"><strong>Priority</strong>: ${this.visitPriority}</li>
           </ul>
         </div>
 
         <div class="card-footer">
-          <button class="btn btn-success btn-sm" type="button" id="btn-details">Details</button>
-          <button class="btn btn-success btn-sm d-none" type="button" id="btn-less">Less</button
-          ><button class="btn btn-info btn-sm ms-1" type="button" id="btn-edit">Edit</button>
+          <button class="btn btn-info btn-sm" type="button" id="btn-details">Details</button>
+          <button class="btn btn-info btn-sm d-none" type="button" id="btn-less">Less</button
+          ><button class="btn btn-warning btn-sm ms-1" type="button" id="btn-edit">Edit</button>
         </div>
       </div>
     `;

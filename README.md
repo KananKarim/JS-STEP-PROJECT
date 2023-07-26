@@ -20,7 +20,7 @@ In the top right corner - "Login" button. After successful authentication, it sh
 Search by visit title/content.
 Filter by status (Open/Done) - whether the visit has been completed or not.
 Filter by urgency (High, Normal, Low) of the visit.
-Below the filter form - a list of created visits.
+3. Below the filter form - a list of created visits.
 ## Teamwork
 In this project, all students are divided into groups of three individuals. Students can distribute tasks among themselves independently. When submitting the project, it is necessary to indicate in the Readme.md file who was responsible for each part of the assignment.
 
@@ -30,32 +30,32 @@ In this project, all students are divided into groups of three individuals. Stud
 - Clicking the Create Visit button opens a modal window where a new card can be created.
 - Use the ES6 class syntax for creating classes.
 - For AJAX requests, you can use either fetch or axios.
-After any AJAX request, the page should not be refreshed. When adding/deleting a card or performing similar operations with the server, the entire list of cards should not be reloaded. Instead, use the data from the server response and JavaScript to update the information on the page.
+- After any AJAX request, the page should not be refreshed. When adding/deleting a card or performing similar operations with the server, the entire list of cards should not be reloaded. Instead, use the data from the server response and JavaScript to update the information on the page.
 - Previously added notes should not disappear when the page is refreshed or closed.
 - It is desirable to divide the project into modules using ES6 modules.
-Create Visit Modal Window
+## Create Visit Modal Window
 The modal window should include:
 
 - A dropdown list (select) for selecting a doctor. Depending on the selected doctor, fields specific to that doctor's visit should appear below the dropdown list.
-The list should have three options: Cardiologist, Dentist, Therapist.
+- The list should have three options: Cardiologist, Dentist, Therapist.
 - After selecting a doctor from the list, fields for making an appointment with that doctor should appear below. Several fields are common for all three doctors:
-Visit purpose
-Brief visit description
-Dropdown - urgency level (normal, priority, urgent)
-Full name
+1) Visit purpose
+2) Brief visit description
+3) Dropdown - urgency level (normal, priority, urgent)
+4) Full name
 - Each doctor also has unique fields to fill in. If the Cardiologist option is chosen, the following additional fields should appear for entering information:
-Normal blood pressure
-Body Mass Index (BMI)
-Previously diagnosed cardiovascular diseases
-Age
+1) Normal blood pressure
+2) Body Mass Index (BMI)
+3) Previously diagnosed cardiovascular diseases
+4) Age
 - If the Dentist option is chosen, the following additional information needs to be filled in:
-Last visit date
+1) Last visit date
 - If the Therapist option is chosen, the following additional information needs to be filled in:
-Age
-Create button. When the button is clicked, an AJAX request is sent to the corresponding endpoint, and if the response contains information about the newly created visit, a visit card is created on the Visits Board page, and the modal window is closed.
+1) Age
+- Create button. When the button is clicked, an AJAX request is sent to the corresponding endpoint, and if the response contains information about the newly created visit, a visit card is created on the Visits Board page, and the modal window is closed.
 - Close button - closes the modal window without saving information or creating a visit card. Clicking outside the modal window area also closes the modal window.
 - All input fields, regardless of the selected option, except for the additional comments field, are mandatory. Data validation is not required.
-- Visit Card Description
+## Visit Card Description
 The card created upon clicking appears on the Visits Board. It should look something like this: interface
 
 ### It should include:
@@ -70,7 +70,7 @@ You need to implement card filters (an input field for searching by title or vis
 
 The system should work similar to filters in online stores (for example, on the left side here).
 
-Classes
+### Classes
 The JavaScript code must include the following classes:
 
 - Modal class (modal window);
@@ -79,8 +79,8 @@ The JavaScript code must include the following classes:
 
 You need to define the methods and properties for each class on your own. If necessary, you can also add additional classes.
 
-Implementation Requirements
+### Implementation Requirements
 The design can be any, but it must exist.
 
-AJAX Part
+### AJAX Part
 All the necessary documentation for AJAX server interaction can be found here.

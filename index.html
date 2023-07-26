@@ -19,21 +19,18 @@
         <h1 class="name display-1">Your Health, Our Priority!</h1>
         <button
           id="btn-login"
-          class="btn btn btn-outline-success"> Login</button>
+          class="btn btn btn-outline-success">Login</button>
         <button
           id="btn-visit"
           style="display: none; height: 60px;"
-          class="btn btn btn-outline-danger"
-        >
-          Add Visit
-        </button>
+          class="btn btn btn-outline-danger">Add Visit</button>
       </section>
     </header>
 
     <main>
       <section class="main container">
         <h1 class="tittle" style="color: rgb(135, 135, 135);
-        text-align: center; ">Hello! There are no items!</h1>
+        text-align: center">Hello! There are no items!</h1>
       </section>
     </main>
 
@@ -51,7 +48,7 @@
         ; padding: 40px">
           <label for="status-search" style="color: aliceblue; font-size: 20px;" class="form-label">Status</label>
           <select class="form-select" name="status" id="status-search">
-            <option style="color: red;"  selected value="">By status</option>
+            <option class="text-danger"  selected value="">By status</option>
           
             <option value="open">Open</option>
             <option value="done">Done</option>
@@ -61,7 +58,7 @@
         <div class="col" style="background-color: rgb(53, 187, 120); padding: 40px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
           <label for="priority-search" style="color: aliceblue; font-size: 20px;" class="form-label">Priority</label>
           <select class="form-select" name="priority" id="priority-search">
-            <option style="color: red;" selected value="">By priority</option>
+            <option class="text-danger" selected value="">By priority</option>
             <option value="high">High</option>
             <option value="normal">Normal</option>
             <option value="low">Low</option>
@@ -74,7 +71,6 @@
       <div class="card-group d-flex flex-row flex-wrap gap-4">
       </div>
     </section>
-
     <script type="module" src="./script/index.js"></script>
   </body>
 </html>

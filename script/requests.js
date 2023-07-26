@@ -18,7 +18,7 @@ const sendRequest = async (entity = "", method = "GET", token, config) => {
       }
     } else {
       return new Error(
-        `There is a problem fetching request: entity - ${entity}, method - ${method}!`
+        `There is a problem at fetching request: entity - ${entity}, method - ${method}!`
       );
     }
   });

@@ -33,18 +33,16 @@ transition: 0.5s;
 .main {
   margin: 100px auto;
 }
-
 #btn-submit-newVisit{
   margin-top: 10px;
-  background-color: darkgray;
+  font-weight: bolder;
+  background-color: navy;
   color: white;
 }
-
 #btn-submit-newVisit:hover{
   background-color: #fff;
-  color: darkgray;
+  color: navy ;
 }
-
 .modal {
   margin: 1rem 0 1rem;
 }
@@ -54,31 +52,24 @@ transition: 0.5s;
 .overflow {
   overflow: hidden;
 }
-
 .modal-content {
-  background-color: #9C27B0  !important;
+  background-color: #b477be  !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
-
 .modal-header{
   color: #F3E5F5;
 }
-
 .modal-body label{
   color: #F3E5F5;
   font-weight: bold;
 }
-
 section .card-group{
   display: flex;
   flex-wrap: wrap !important;
 }
-
 section .card-group > * {
   min-width: 30%;
 }
-
-
 .head {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
