@@ -34,7 +34,16 @@ transition: 0.5s;
   margin: 100px auto;
 }
 
+#btn-submit-newVisit{
+  margin-top: 10px;
+  background-color: darkgray;
+  color: white;
+}
 
+#btn-submit-newVisit:hover{
+  background-color: #fff;
+  color: darkgray;
+}
 
 .modal {
   margin: 1rem 0 1rem;
