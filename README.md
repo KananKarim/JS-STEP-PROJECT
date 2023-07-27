@@ -6,7 +6,6 @@
 ## What we did?
 Imanova Tunzala - using bootstrap, token storage, designing, editing of cards, creation of some Constructor subclasses.
 <br>Karimli Kanan - creation of Constructor functions, generation of new cards, detailing of cards
-<br>Sahib Humbatzada- authoriztion, backend, modal windows, editing.
 
 ## Task
 You need to create a page where a Secretary can create cards describing scheduled visits to doctors.
