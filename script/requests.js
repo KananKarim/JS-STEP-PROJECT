@@ -1,7 +1,14 @@
 // requests.js
 const linkAPI = "https://ajax.test-danit.com/api/v2/cards/";
+const TOKEN_ENV_VAR = "DANIT_API_TOKEN";
 
-const sendRequest = async (entity = "", method = "GET", token, config) => {
+const sendRequest = async (entity = "", method = "GET", config = {}) => {
+  const token = process.env.DANIT_API_TOKEN;
+
+  if (!token) {
+    throw new Error("Please set the DANIT_API_TOKEN environment variable.");
+  }
+
   return await fetch(`${linkAPI}${entity}`, {
     method,
     headers: {
@@ -17,12 +24,13 @@ const sendRequest = async (entity = "", method = "GET", token, config) => {
         return response;
       }
     } else {
-      return new Error(
+      throw new Error(
         `There is a problem at fetching request: entity - ${entity}, method - ${method}!`
       );
     }
   });
 };
+
 
 export const addVisitor = (token, requestBody) =>
   sendRequest("", "POST", token, {

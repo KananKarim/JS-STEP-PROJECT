@@ -6,7 +6,12 @@
 ## What we did?
 Imanova Tunzala - using bootstrap, token storage, designing, editing of cards, creation of some Constructor subclasses.
 <br>Karimli Kanan - creation of Constructor functions, generation of new cards, detailing of cards
-<br>Sahib Humbatzada- authoriztion, backend, modal windows, editing.
+<br>Sahib Humbatzada- Authorization, Backend, Modal Windows, Editing the parts of whole code due to some misconfigurations, if you just look at the another branches to compare with my branch(test) , you can understand everything.
+That's why I just use another modeling technique for design part of code.
+
+THAT'S because there is no understanding about Token Implementation, that's why I implement it as myself , just for my section , (devsec).
+
+I also did some simplifications on some parts of code.
 
 ## Task
 You need to create a page where a Secretary can create cards describing scheduled visits to doctors.

@@ -118,48 +118,58 @@ export function Cardiologist({
     document.querySelector(`#id-${this.visitID} .card-age`).remove();
   };
 
-  this.renderNewForm = function () {
-    const btnSubmit = document.querySelector("#btn-submit-newVisit");
-    do {
-      if (btnSubmit.previousSibling.id !== "visitPatient1") {
-        btnSubmit.previousSibling.remove();
-      }
-    } while (btnSubmit.previousSibling.id !== "visitPatient1");
-
-    const visitBlood = new Int({
-      type: "text",
-      classes: "form-control",
+  const VISIT_FIELDS = [
+    {
       id: "visitBlood1",
-      name: "Blood Presure",
-    });
-    const visitWeight = new Int({
+      name: "Blood Pressure",
       type: "text",
       classes: "form-control",
+    },
+    {
       id: "visitWeight1",
       name: "Weight Index",
-    });
-    const visitDisease = new Int({
       type: "text",
       classes: "form-control",
+    },
+    {
       id: "visitDisease1",
       name: "Heart Disease",
-    });
-    const visitAge = new Int({
       type: "text",
       classes: "form-control",
+    },
+    {
       id: "visitAge1",
       name: "Patient's Age",
-    });
-
-    btnSubmit.before(visitBlood.label);
-    btnSubmit.before(visitBlood.input);
-    btnSubmit.before(visitWeight.label);
-    btnSubmit.before(visitWeight.input);
-    btnSubmit.before(visitDisease.label);
-    btnSubmit.before(visitDisease.input);
-    btnSubmit.before(visitAge.label);
-    btnSubmit.before(visitAge.input);
+      type: "text",
+      classes: "form-control",
+    },
+  ];
+  
+  this.renderNewForm = function () {
+    const btnSubmit = document.querySelector("#btn-submit-newVisit");
+    const existingInputs = btnSubmit.previousSiblings;
+  
+    // Remove all existing input fields
+    for (const input of existingInputs) {
+      input.remove();
+    }
+  
+    // Add new input fields
+    for (const field of VISIT_FIELDS) {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+  
+      label.textContent = field.name;
+      input.setAttribute("id", field.id);
+      input.setAttribute("name", field.name);
+      input.setAttribute("type", field.type);
+      input.setAttribute("class", field.classes);
+  
+      btnSubmit.before(label);
+      btnSubmit.before(input);
+    }
   };
+  
 }
 
 export function Dentist({

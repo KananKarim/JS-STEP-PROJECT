@@ -254,23 +254,24 @@ cardGroup.addEventListener("click", (event) => {
           visitLastVisitDate: visitLastVisitDate,
         };
 
-        putVisitorsID(visitID, token, requestBody).then((response) => {
-          const visit = new Visitor(response);
-          const visitCard = document.querySelector(`#id-${visitID}`); 
-          visitCard.querySelector(".card-body h5").innerText = response.title;
-          visitCard.querySelector(".card-text").innerText =
-            response.description;
-          visitCard.querySelector(
-            ".card-patient"
-          ).innerHTML = `<strong>Patient</strong>: ${response.visitPatient}`;
-          visitCard.querySelector(
-            ".card-status"
-          ).innerHTML = `<strong>Status</strong>: ${response.visitStatus}`;
-          visitCard.querySelector(
-            ".card-priority"
-          ).innerHTML = `<strong>Priority</strong>: ${response.visitPriority}`;
-        });
-        loginModal.close();
+        const putVisitorsID=(visitID,token,requestBody) =>{
+          return fetch(`/api/visitors/${visitID}`,{
+            method: "PUT",
+            headers: { Authorization: `Bearer ${token}` },
+            body: JSON.stringify(requestBody),
+          })
+        }
+
+        const displayVisit=(response)=>{
+          const visitcard=document.querySelector(`#id-${visitID}`);
+
+          visitcard.querySelector(".card-body h5").innerText=response.title;
+          visitcard.querySelector(".card-text").innerText=response.description;
+          visitcard.querySelector(".card-patient").innerHTML=`<strong>Patient</strong>: ${response.visitPatient}`;;
+          visitcard.querySelector(".card-status").innerHTML=`<strong>Status</strong>: ${response.visitStatus}`;;
+          visitcard.querySelector(".card-priority").innerHTML=`<strong>Priority</strong>: ${response.visitPriority}`;;
+          
+        }
       });
   }
 });

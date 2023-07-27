@@ -2,28 +2,28 @@ export default function () {
   const filter = document.querySelector(".filter");
 
   const displayCards = (title, status, priority) => {
-    const cards = document.querySelectorAll(".card-item");
+  const cards = document.querySelectorAll(".card-item");
 
-    for (const card of cards) {
-      const cardTitle = card.querySelector("h5").innerText.toLowerCase();
-      const cardStatus = card
-        .querySelector(".card-status")
-        .innerText.toLowerCase();
-      const cardPriority = card
-        .querySelector(".card-priority")
-        .innerText.toLowerCase();
+  const filteredCards = cards.filter((card) => {
+    const cardTitle = card.querySelector("h5").innerText.toLowerCase();
+    const cardStatus = card
+      .querySelector(".card-status")
+      .innerText.toLowerCase();
+    const cardPriority = card
+      .querySelector(".card-priority")
+      .innerText.toLowerCase();
 
-      if (
-        (!title || cardTitle.includes(title)) &&
-        (!status || cardStatus.includes(status)) &&
-        (!priority || cardPriority.includes(priority))
-      ) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    }
-  };
+    return (
+      (!title || cardTitle.includes(title)) &&
+      (!status || cardStatus.includes(status)) &&
+      (!priority || cardPriority.includes(priority))
+    );
+  });
+
+  filteredCards.forEach((card) => {
+    card.style.display = "";
+  });
+};
 
   filter.addEventListener("change", (e) => {
     const form = e.currentTarget;

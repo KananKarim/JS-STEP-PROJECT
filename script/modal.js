@@ -224,47 +224,50 @@ export function Modal({ headerModal, closeBtn = false, form }) {
     return this.modal;
   };
 
-  this.getToken = function (initBtn, initialEmptyContentTitle, btnToActivate) {
-    return new Promise((resolve, reject) => {
-      initBtn.addEventListener("click", (e) => {
-        const authorizeModalElem = this.render();
-        authorizeModalElem.querySelector("#exampleInputEmail1").value =
-          "kenankerimli7770@gmail.com";
-        authorizeModalElem.querySelector("#exampleInputPassword1").value =
-          "Kerimov7770";
-        document.body.append(authorizeModalElem);
-        initialEmptyContentTitle.style.display = "none";
-        const btnSubmit = authorizeModalElem.querySelector("#btn-submit");
-        btnSubmit.addEventListener("click", async (e) => {
-          e.preventDefault();
-          const email = document.querySelector("#exampleInputEmail1").value;
-          const pass = document.querySelector("#exampleInputPassword1").value;
+  // const token_key = "DANIT_API_TOKEN"; //this should be on .env file which is not included in this project, no one can see this key.
 
-          const response = await fetch(
-            "https://ajax.test-danit.com/api/v2/cards/login",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email: `${email}`, password: `${pass}` }),
-            }
-          );
 
-          const token = response.ok ? await response.text() : false;
+this.getToken = function (initBtn, initialEmptyContentTitle, btnToActivate) {
+  return new Promise((resolve, reject) => {
+    initBtn.addEventListener("click", (e) => {
+      const authorizeModalElem = this.render();
+      document.body.append(authorizeModalElem);
+      initialEmptyContentTitle.style.display = "none";
+      const btnSubmit = authorizeModalElem.querySelector("#btn-submit");
+      btnSubmit.addEventListener("click", async (e) => {
+        e.preventDefault();
 
-          if (token) {
-            this.close();
-            initBtn.style.display = "none";
-            btnToActivate.style.display = "block";
-            resolve(token);
-          } else {
-            alert("Incorrect email or password!");
+        // const token = process.env.DANIT_API_TOKEN;
+
+        if (!token) {
+          alert("Please set the DANIT_API_TOKEN environment variable.");
+          return;
+        }
+
+        const response = await fetch(
+          "https://ajax.test-danit.com/api/v2/cards/login",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`,
+            },
           }
-        });
+        );
+
+        const token = response.ok ? await response.text() : false;
+
+        if (token) {
+          this.close();
+          initBtn.style.display = "none";
+          btnToActivate.style.display = "block";
+          resolve(token);
+        } else {
+          alert("Incorrect email or password!");
+        }
       });
     });
-  };
-}
+  });
+};
 
 export default Modal;
