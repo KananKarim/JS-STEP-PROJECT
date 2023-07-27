@@ -229,9 +229,9 @@ export function Modal({ headerModal, closeBtn = false, form }) {
       initBtn.addEventListener("click", (e) => {
         const authorizeModalElem = this.render();
         authorizeModalElem.querySelector("#exampleInputEmail1").value =
-          "kenankerimli7770@gmail.com";
+          "kanan12345@mail.ru";
         authorizeModalElem.querySelector("#exampleInputPassword1").value =
-          "Kerimov7770";
+          "1234554321";
         document.body.append(authorizeModalElem);
         initialEmptyContentTitle.style.display = "none";
         const btnSubmit = authorizeModalElem.querySelector("#btn-submit");
